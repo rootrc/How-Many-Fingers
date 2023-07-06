@@ -1,12 +1,12 @@
-# Project Name
+# How Many Fingers?
 
- Add short description of project here > 
+The program classifies images of hands by the number of fingers raised. There are six classes: 0, 1, 2, 3, 4, and 5, which are how many fingers the network believes are being raised.
 
 ![add image descrition here](direct image link here)
 
 ## The Algorithm
 
-Add an explanation of the algorithm and how it works. Make sure to include details about how the code works, what it depends on, and any other relevant info. Add images or other descriptions for your project here. 
+This project utilizes imagenet and resnet-18. Torch and torchvision were used on a dataset of 5000 pictures for 35 epoches with resnet-18 as the base for my network. The resulting model was then exported into onnx.
 
 ## Running this project
 
