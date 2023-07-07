@@ -1,16 +1,23 @@
 # How Many Fingers?
 
-The program classifies images of hands by the number of fingers raised. There are six classes: 0, 1, 2, 3, 4, and 5, which are how many fingers the network believes are being raised.
+The program classifies images by the number of fingers raised. Simply provide an image of a hand, run the program, and it'll tell you how many fingers are believed to be raised, 0 to 5.
 
-![add image descrition here](direct image link here)
 
 ## The Algorithm
 
-This project utilizes imagenet and resnet-18. Torch and torchvision were used on a dataset of 5000 pictures for 35 epoches with resnet-18 as the base for my network. The resulting model was then exported into onnx.
+This project was developed using Jetson Nano.  Its basis is a resnet18 model retrained on a dataset of 5000 pictures for 35 epochs. The resulting model was then exported into onnx and is used by Imagenet to determine the classification of the image. 
 
 ## Running this project
 
-1. Add steps for running this project.
-2. Make sure to include any required libraries that need to be installed for your project to run.
+How to run:
+1. Make sure the project has been downloaded correctly with hand-gestures.onnx and labels.txt downloaded onto your Jetson Nano
+2. Instal git with "sudo apt install git all"
+3. Clone the jetson-inference using "git clone --recursive https://github.com/dusty-nv/jetson-inference" or another method
+4. Download the python packages using "sudo apt-get install libpython3-dev python3-numpy"
+5. Change directories into the project with "cd How-Many-Fingers"
+6. Set the NET and DATASET variables using "NET=models/cat_dog" and "DATASET=data/cat_dog respectively"
+7. Put your image in the data/hand-gestures/ folder, beside labels.txt. Make sure the file format is compatible. 
+8. Run "imagenet.py --model=$NET/hand-gestures.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/<Image Name>.jpg .jpg"
+9. To see the output, scp the outputted file from the Jetson Nano onto your computer.
 
 [View a video explanation here](video link)
