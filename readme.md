@@ -20,4 +20,4 @@ How to run:
 8. Run "imagenet.py --model=$NET/hand-gestures.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/<Image Name>.jpg .jpg"
 9. To see the output, scp the outputted file from the Jetson Nano onto your computer.
 
-[View a video explanation here](video link)
+[View a video explanation here](https://youtu.be/LLDAfz8YT04)https://youtu.be/LLDAfz8YT04)
